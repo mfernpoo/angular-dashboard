@@ -40,12 +40,16 @@ import {DashboardService} from '../../../services/dashboard.service';
       </mat-button-toggle-group>
     </div>
 
-    <button mat-icon-button class="move-forward-button" (click)="store.moveWidgetoRight(data().id)">
+    <button mat-icon-button class="move-forward-button" (click)="store.moveWidgetToRight(data().id)">
       <mat-icon>chevron_right</mat-icon>
     </button>
 
-    <button mat-icon-button class="move-backward-button" (click)="store.moveWidgetoLeft(data().id)">
+    <button mat-icon-button class="move-backward-button" (click)="store.moveWidgetToLeft(data().id)">
       <mat-icon>chevron_left</mat-icon>
+    </button>
+
+    <button mat-icon-button class="remove-widget-button" (click)="store.removeWidget(data().id)">
+      <mat-icon>delete</mat-icon>
     </button>
   `,
   styles: `
@@ -93,6 +97,13 @@ import {DashboardService} from '../../../services/dashboard.service';
       transform: translateY(-50%);
       left: -5px;
     }
+    .remove-widget-button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #cc0000;
+    }
+
   `
 })
 export class WidgetOptionsComponent {
